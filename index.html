@@ -6,7 +6,6 @@
   <title>WOO JIN LEE | IT Engineer Portfolio</title>
 
   <style>
-    /* ===== Base ===== */
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
@@ -21,7 +20,6 @@
       padding: 80px 24px;
     }
 
-    /* ===== Divider ===== */
     .divider {
       border-top: 1px solid #e5e7eb;
       margin: 64px 0;
@@ -31,7 +29,6 @@
     .name {
       font-size: 44px;
       font-weight: 900;
-      letter-spacing: -0.5px;
       margin-bottom: 16px;
     }
 
@@ -39,11 +36,6 @@
       font-size: 14px;
       color: #4b5563;
       margin-bottom: 28px;
-    }
-
-    .contact span {
-      margin-right: 10px;
-      white-space: nowrap;
     }
 
     .intro {
@@ -54,9 +46,35 @@
 
     /* ===== Section Title ===== */
     h2 {
-      font-size: 26px;
-      font-weight: 700;
-      margin-bottom: 24px;
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 40px;
+    }
+
+    /* ===== Education ===== */
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 48px;
+    }
+
+    .edu-left h3 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .edu-left p {
+      margin: 4px 0;
+      color: #374151;
+    }
+
+    .edu-right {
+      font-size: 14px;
+      color: #7c3aed;
+      white-space: nowrap;
     }
 
     /* ===== Skills ===== */
@@ -70,7 +88,6 @@
       display: inline-block;
       margin: 0 12px 12px 0;
       font-size: 15px;
-      color: #111827;
     }
 
     /* ===== Projects ===== */
@@ -79,8 +96,8 @@
     }
 
     .project h3 {
-      font-size: 19px;
-      font-weight: 600;
+      font-size: 20px;
+      font-weight: 700;
       margin-bottom: 10px;
     }
 
@@ -99,14 +116,13 @@
       text-decoration: underline;
     }
 
-    /* ===== Responsive ===== */
-    @media (max-width: 600px) {
-      .name {
-        font-size: 34px;
+    @media (max-width: 700px) {
+      .edu-item {
+        flex-direction: column;
       }
 
-      .contact {
-        line-height: 1.6;
+      .edu-right {
+        margin-top: 6px;
       }
     }
   </style>
@@ -114,77 +130,98 @@
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <!-- Header -->
-    <div>
-      <div class="name">WOO JIN LEE</div>
-      <div class="contact">
-        <span>TEL. 010-4421-2358</span> |
-        <span>E-MAIL. sk4diana@gmail.com</span> |
-        <span>ADDRESS. 61, Sangmugongwon-ro, Seo-gu, Gwangju, Republic of Korea</span>
-      </div>
-      <p class="intro">
-        백엔드 개발과 시스템 운영 관점에서 서비스를 바라보는 IT엔지니어 지망생입니다.
-        서버 로직과 데이터 처리 흐름을 이해하는 것을 바탕으로,
-        서비스가 실제 환경에서 안정적으로 동작하도록 만드는 데 관심이 있습니다.
-      </p>
+  <!-- Header -->
+  <div>
+    <div class="name">WOO JIN LEE</div>
+    <div class="contact">
+      TEL. 010-4421-2358 |
+      E-MAIL. sk4diana@gmail.com |
+      ADDRESS. 61, Sangmugongwon-ro, Seo-gu, Gwangju, Republic of Korea
     </div>
-
-    <div class="divider"></div>
-
-    <!-- Skills -->
-    <div>
-      <h2>SKILLS</h2>
-      <ul class="skills-list">
-        <li>Java</li>
-        <li>JavaScript</li>
-        <li>Python</li>
-        <li>Spring Boot</li>
-        <li>REST API</li>
-        <li>MySQL</li>
-        <li>Oracle</li>
-        <li>Linux</li>
-        <li>Docker</li>
-        <li>Prometheus</li>
-        <li>Grafana</li>
-        <li>cAdvisor</li>
-        <li>Git / GitHub</li>
-      </ul>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- Projects -->
-    <div>
-      <h2>PROJECTS</h2>
-
-      <div class="project">
-        <h3>Docker-based Container Monitoring System</h3>
-        <p>
-          Linux 환경에서 Docker 컨테이너로 실행되는 서비스의 자원 사용 상태를
-          모니터링하고 실행 환경별 성능 특성을 비교한 프로젝트입니다.
-        </p>
-        <p>
-          Prometheus, Grafana, cAdvisor를 활용해 CPU·메모리·네트워크 지표를 수집했습니다.
-        </p>
-        <a href="#" target="_blank">GitHub Repository</a>
-      </div>
-
-      <div class="project">
-        <h3>Spring Boot Backend Service</h3>
-        <p>
-          전기 사용량 데이터를 처리하고 요금을 예측하는 기능을 제공하는
-          백엔드 서비스를 구현했습니다.
-        </p>
-        <p>
-          REST API 기반으로 서버와 클라이언트 간 데이터 흐름을 설계했습니다.
-        </p>
-        <a href="#" target="_blank">GitHub Repository</a>
-      </div>
-    </div>
-
+    <p class="intro">
+      백엔드 개발과 시스템 운영 관점에서 서비스를 바라보는 IT엔지니어 지망생입니다.
+      서버 로직과 데이터 처리 흐름을 이해하는 것을 바탕으로,
+      서비스가 실제 환경에서 안정적으로 동작하도록 만드는 데 관심이 있습니다.
+    </p>
   </div>
+
+  <div class="divider"></div>
+
+  <!-- Education -->
+  <div>
+    <h2>EDUCATION</h2>
+
+    <div class="edu-item">
+      <div class="edu-left">
+        <h3>HONAM UNIVERSITY</h3>
+        <p>Bachelor of Science in Computer Engineering</p>
+        <p>Graduated</p>
+      </div>
+      <div class="edu-right">
+        February 2019 – February 2025
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-left">
+        <h3>JEONNAM HIGH SCHOOL</h3>
+        <p>Humanities Track</p>
+        <p>Graduated</p>
+      </div>
+      <div class="edu-right">
+        March 2016 – January 2019
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Skills -->
+  <div>
+    <h2>SKILLS</h2>
+    <ul class="skills-list">
+      <li>Java</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>Spring Boot</li>
+      <li>REST API</li>
+      <li>MySQL</li>
+      <li>Oracle</li>
+      <li>Linux</li>
+      <li>Docker</li>
+      <li>Prometheus</li>
+      <li>Grafana</li>
+      <li>Git / GitHub</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Projects -->
+  <div>
+    <h2>PROJECTS</h2>
+
+    <div class="project">
+      <h3>Docker-based Container Monitoring System</h3>
+      <p>
+        Docker 컨테이너 기반 서비스의 자원 사용량을 모니터링하고
+        실행 환경별 성능 특성을 비교한 프로젝트입니다.
+      </p>
+      <a href="#" target="_blank">GitHub Repository</a>
+    </div>
+
+    <div class="project">
+      <h3>Spring Boot Backend Service</h3>
+      <p>
+        전기 사용량 데이터를 처리하고 요금을 예측하는 백엔드 서비스를 구현했습니다.
+      </p>
+      <a href="#" target="_blank">GitHub Repository</a>
+    </div>
+  </div>
+
+</div>
 
 </body>
 </html>
