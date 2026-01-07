@@ -9,53 +9,68 @@
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      line-height: 1.7;
-      color: #222;
+      line-height: 1.8;
+      color: #1f2937;
       background-color: #ffffff;
     }
 
     section {
-      max-width: 900px;
+      max-width: 880px;
       margin: 0 auto;
-      padding: 80px 20px;
-      border-bottom: 1px solid #eee;
+      padding: 96px 24px;
+      border-bottom: 1px solid #f1f5f9;
     }
 
     h1 {
-      font-size: 36px;
-      margin-bottom: 16px;
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 24px;
     }
 
     h2 {
-      font-size: 24px;
+      font-size: 26px;
+      font-weight: 600;
       margin-bottom: 20px;
     }
 
     h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
 
     p {
-      margin-bottom: 12px;
-      color: #444;
+      margin-bottom: 14px;
+      color: #374151;
     }
 
     ul {
-      padding-left: 18px;
+      padding-left: 20px;
     }
 
     li {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     a {
-      color: #0066cc;
+      color: #2563eb;
       text-decoration: none;
+      font-weight: 500;
     }
 
     a:hover {
       text-decoration: underline;
+    }
+
+    /* 프로젝트 카드 느낌 */
+    .project {
+      padding: 24px 0;
+    }
+
+    .project + .project {
+      border-top: 1px solid #e5e7eb;
+      margin-top: 32px;
+      padding-top: 32px;
     }
   </style>
 </head>
@@ -69,14 +84,17 @@
       백엔드 개발과 시스템 운영 관점에서 서비스를 바라보는 IT엔지니어 지망생입니다.
     </p>
     <p>
-      기능 구현에 그치지 않고, 서비스가 실제 환경에서 어떻게 동작하고
-      유지되는지를 함께 고민하며 개발하고자 합니다.
+      서버 로직과 데이터 처리 흐름을 이해하는 것을 바탕으로,
+      서비스가 실제 환경에서 안정적으로 동작하도록 만드는 데 관심이 있습니다.
     </p>
   </section>
 
   <!-- Skills -->
   <section>
     <h2>기술 스택</h2>
+    <p>
+      주로 백엔드 개발과 시스템 운영 관점에서 사용해온 기술입니다.
+    </p>
     <ul>
       <li><strong>Language</strong>: Java, JavaScript, Python</li>
       <li><strong>Backend</strong>: Spring Boot, REST API</li>
@@ -91,38 +109,45 @@
   <section>
     <h2>프로젝트</h2>
 
-    <h3>Docker 기반 컨테이너 모니터링 시스템</h3>
-    <p>
-      Linux 환경에서 Docker 컨테이너로 실행되는 서비스의 자원 사용 상태를
-      모니터링하고, 실행 환경별 성능 특성을 비교한 프로젝트입니다.
-    </p>
-    <p>
-      Prometheus, Grafana, cAdvisor를 활용해 CPU·메모리·네트워크 지표를 수집하고
-      시각화했습니다.
-    </p>
-    <p>
-      <a href="#">GitHub Repository</a>
-    </p>
+    <div class="project">
+      <h3>Docker 기반 컨테이너 모니터링 시스템</h3>
+      <p>
+        Linux 환경에서 Docker 컨테이너로 실행되는 서비스의 자원 사용 상태를
+        모니터링하고, 실행 환경별 성능 특성을 비교한 프로젝트입니다.
+      </p>
+      <p>
+        Prometheus, Grafana, cAdvisor를 활용해 CPU·메모리·네트워크 지표를 수집하고
+        시각화했습니다.
+      </p>
+      <p>
+        <a href="#">GitHub Repository</a>
+      </p>
+    </div>
 
-    <br/>
-
-    <h3>Spring Boot 기반 백엔드 서비스</h3>
-    <p>
-      전기 사용량 데이터를 처리하고 요금을 예측하는 기능을 제공하는
-      백엔드 서비스를 구현한 프로젝트입니다.
-    </p>
-    <p>
-      REST API 기반으로 서버–클라이언트 간 데이터 흐름을 설계하고 구현했습니다.
-    </p>
-    <p>
-      <a href="https://github.com/sk4diana/it-portfolio">GitHub Repository</a>
-    </p>
+    <div class="project">
+      <h3>Spring Boot 기반 백엔드 서비스</h3>
+      <p>
+        전기 사용량 데이터를 처리하고 요금을 예측하는 기능을 제공하는
+        백엔드 서비스를 구현한 프로젝트입니다.
+      </p>
+      <p>
+        REST API 기반으로 서버–클라이언트 간 데이터 흐름을 설계하고 구현했습니다.
+      </p>
+      <p>
+        <a href="#">GitHub Repository</a>
+      </p>
+    </div>
   </section>
 
   <!-- Contact -->
   <section>
     <h2>Contact</h2>
-    <p>GitHub: <a href="https://github.com/sk4diana/it-portfolio">https://github.com/sk4diana/it-portfolio</a></p>
+    <p>
+      GitHub:
+      <a href="https://github.com/sk4diana" target="_blank">
+        https://github.com/sk4diana
+      </a>
+    </p>
   </section>
 
 </body>
