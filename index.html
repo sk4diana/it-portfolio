@@ -36,6 +36,25 @@
       font-size: 14px;
       color: #4b5563;
       margin-bottom: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .contact .sep {
+      color: #9ca3af;
+    }
+
+    .contact .label {
+      color: #4b5563;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
+    .contact .value {
+      color: #7c3aed; /* 포인트 컬러 */
+      font-weight: 700;
     }
 
     .intro {
@@ -51,29 +70,40 @@
       margin-bottom: 40px;
     }
 
-    /* Education / Certificate common */
+    /* Education / Certifications common */
     .item {
+      margin-bottom: 52px;
+    }
+
+    /* "한 줄로 보이게" 상단 라인(좌: 타이틀 / 우: 기간) */
+    .row-top {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 48px;
+      align-items: baseline; /* 글자 기준선 맞춤 */
+      gap: 16px;
     }
 
-    .item-left h3 {
+    .row-top h3 {
       font-size: 22px;
       font-weight: 800;
-      margin-bottom: 6px;
+      margin: 0;
+      letter-spacing: 0.5px;
     }
 
-    .item-left p {
-      margin: 4px 0;
-      color: #374151;
-    }
-
-    .item-right {
+    .date {
       font-size: 14px;
       color: #7c3aed;
       white-space: nowrap;
+      margin: 0;
+    }
+
+    .row-body {
+      margin-top: 10px;
+    }
+
+    .row-body p {
+      margin: 4px 0;
+      color: #374151;
     }
 
     /* Skills */
@@ -116,12 +146,25 @@
     }
 
     @media (max-width: 700px) {
-      .item {
-        flex-direction: column;
+      .container {
+        padding: 60px 18px;
       }
 
-      .item-right {
+      .name {
+        font-size: 34px;
+      }
+
+      .row-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .date {
         margin-top: 6px;
+      }
+
+      .contact {
+        line-height: 1.6;
       }
     }
   </style>
@@ -134,11 +177,15 @@
   <!-- Header -->
   <div>
     <div class="name">WOO JIN LEE</div>
+
     <div class="contact">
-      TEL. 010-4421-2358 |
-      E-MAIL. sk4diana@gmail.com |
-      ADDRESS. 61, Sangmugongwon-ro, Seo-gu, Gwangju, Republic of Korea
+      <span class="label">TEL.</span> <span class="value">010-4421-2358</span>
+      <span class="sep">|</span>
+      <span class="label">E-MAIL.</span> <span class="value">sk4diana@gmail.com</span>
+      <span class="sep">|</span>
+      <span class="label">ADDRESS.</span> <span class="value">61, Sangmugongwon-ro, Seo-gu, Gwangju, Republic of Korea</span>
     </div>
+
     <p class="intro">
       백엔드 개발과 시스템 운영 관점에서 서비스를 바라보는
       <strong>IT엔지니어 지망생</strong>입니다.<br/>
@@ -154,24 +201,24 @@
     <h2>EDUCATION</h2>
 
     <div class="item">
-      <div class="item-left">
+      <div class="row-top">
         <h3>HONAM UNIVERSITY</h3>
+        <p class="date">February 2019 – February 2025</p>
+      </div>
+      <div class="row-body">
         <p>컴퓨터 공학과 학사</p>
         <p>졸업</p>
-      </div>
-      <div class="item-right">
-        February 2019 – February 2025
       </div>
     </div>
 
     <div class="item">
-      <div class="item-left">
+      <div class="row-top">
         <h3>JEONNAM HIGH SCHOOL</h3>
+        <p class="date">March 2016 – January 2019</p>
+      </div>
+      <div class="row-body">
         <p>인문계열 이과</p>
         <p>졸업</p>
-      </div>
-      <div class="item-right">
-        March 2016 – January 2019
       </div>
     </div>
   </div>
@@ -183,22 +230,22 @@
     <h2>CERTIFICATIONS</h2>
 
     <div class="item">
-      <div class="item-left">
+      <div class="row-top">
         <h3>AWS CLF-C02</h3>
-        <p>Amazon Web Services</p>
+        <p class="date">November 2023</p>
       </div>
-      <div class="item-right">
-        November 2023
+      <div class="row-body">
+        <p>Amazon Web Services</p>
       </div>
     </div>
 
     <div class="item">
-      <div class="item-left">
+      <div class="row-top">
         <h3>정보처리기사 (필기)</h3>
-        <p>한국산업인력공단</p>
+        <p class="date">June 2025</p>
       </div>
-      <div class="item-right">
-        June 2025
+      <div class="row-body">
+        <p>한국산업인력공단</p>
       </div>
     </div>
   </div>
@@ -222,6 +269,30 @@
       <li>Grafana</li>
       <li>Git / GitHub</li>
     </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Projects -->
+  <div>
+    <h2>PROJECTS</h2>
+
+    <div class="project">
+      <h3>Docker-based Container Monitoring System</h3>
+      <p>
+        Docker 컨테이너 기반 서비스의 자원 사용량을 모니터링하고
+        실행 환경별 성능 특성을 비교한 프로젝트입니다.
+      </p>
+      <a href="#" target="_blank">GitHub Repository</a>
+    </div>
+
+    <div class="project">
+      <h3>Spring Boot Backend Service</h3>
+      <p>
+        전기 사용량 데이터를 처리하고 요금을 예측하는 백엔드 서비스를 구현했습니다.
+      </p>
+      <a href="#" target="_blank">GitHub Repository</a>
+    </div>
   </div>
 
 </div>
