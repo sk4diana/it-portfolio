@@ -42,9 +42,7 @@
       align-items: center;
     }
 
-    .contact .sep {
-      color: #9ca3af;
-    }
+    .contact .sep { color: #9ca3af; }
 
     .contact .label {
       color: #4b5563;
@@ -53,7 +51,7 @@
     }
 
     .contact .value {
-      color: #7c3aed; /* 포인트 컬러 */
+      color: #7c3aed;
       font-weight: 700;
     }
 
@@ -70,16 +68,15 @@
       margin-bottom: 40px;
     }
 
-    /* Education / Certifications common */
+    /* Common item */
     .item {
       margin-bottom: 52px;
     }
 
-    /* "한 줄로 보이게" 상단 라인(좌: 타이틀 / 우: 기간) */
     .row-top {
       display: flex;
       justify-content: space-between;
-      align-items: baseline; /* 글자 기준선 맞춤 */
+      align-items: baseline;
       gap: 16px;
     }
 
@@ -104,6 +101,56 @@
     .row-body p {
       margin: 4px 0;
       color: #374151;
+    }
+
+    /* Curriculum style */
+    .org-title {
+      color: #7c3aed;
+      font-weight: 900;
+      font-size: 26px;
+      margin: 0 0 22px 0;
+      letter-spacing: -0.2px;
+    }
+
+    .subdate {
+      color: #7c3aed;
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    .hours {
+      color: #6b7280;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .subsection-title {
+      margin-top: 28px;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    /* Detail list (like screenshot) */
+    .detail-list {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+    }
+
+    .detail-list li {
+      position: relative;
+      padding-left: 22px;
+      margin: 8px 0;
+      color: #374151;
+    }
+
+    .detail-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #6b7280;
+      font-weight: 900;
     }
 
     /* Skills */
@@ -146,26 +193,16 @@
     }
 
     @media (max-width: 700px) {
-      .container {
-        padding: 60px 18px;
-      }
-
-      .name {
-        font-size: 34px;
-      }
+      .container { padding: 60px 18px; }
+      .name { font-size: 34px; }
 
       .row-top {
         flex-direction: column;
         align-items: flex-start;
       }
 
-      .date {
-        margin-top: 6px;
-      }
-
-      .contact {
-        line-height: 1.6;
-      }
+      .date { margin-top: 6px; }
+      .contact { line-height: 1.6; }
     }
   </style>
 </head>
@@ -183,7 +220,8 @@
       <span class="sep">|</span>
       <span class="label">E-MAIL.</span> <span class="value">sk4diana@gmail.com</span>
       <span class="sep">|</span>
-      <span class="label">ADDRESS.</span> <span class="value">61, Sangmugongwon-ro, Seo-gu, Gwangju, Republic of Korea</span>
+      <span class="label">ADDRESS.</span>
+      <span class="value">61, Sangmugongwon-ro, Seo-gu, Gwangju, Republic of Korea</span>
     </div>
 
     <p class="intro">
@@ -246,6 +284,36 @@
       </div>
       <div class="row-body">
         <p>한국산업인력공단</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Curriculum -->
+  <div>
+    <h2>CURRICULUM</h2>
+
+    <div class="org-title">LG전자 DX 스쿨 3기</div>
+
+    <div class="item" style="margin-bottom: 0;">
+      <div class="row-top">
+        <h3>K-DIGITAL 훈련 과정</h3>
+        <p class="date">June 2025 – December 2025</p>
+      </div>
+
+      <div class="row-body">
+        <p>BX · CX · DX 교육 과정</p>
+        <div class="subdate">2025.06.26 - 2025.12.19</div>
+
+        <div class="subsection-title">교육 세부 내용</div>
+        <ul class="detail-list">
+          <li><strong>Frontend</strong>: HTML / CSS, Flutter (UI / UX)</li>
+          <li><strong>Backend</strong>: Java, JavaScript, Spring</li>
+          <li><strong>Data / AI</strong>: Crawling, 데이터 시각화 및 분석, 머신러닝, 텍스트 마이닝</li>
+          <li><strong>Deep Learning / CV</strong>: 딥러닝 (LLM·LangChain, YOLOv10), OpenCV</li>
+          <li><strong>Business</strong>: 신규가치 분석</li>
+        </ul>
       </div>
     </div>
   </div>
