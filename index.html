@@ -51,26 +51,26 @@
       margin-bottom: 40px;
     }
 
-    /* Education */
-    .edu-item {
+    /* Education / Certificate common */
+    .item {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       margin-bottom: 48px;
     }
 
-    .edu-left h3 {
+    .item-left h3 {
       font-size: 22px;
       font-weight: 800;
       margin-bottom: 6px;
     }
 
-    .edu-left p {
+    .item-left p {
       margin: 4px 0;
       color: #374151;
     }
 
-    .edu-right {
+    .item-right {
       font-size: 14px;
       color: #7c3aed;
       white-space: nowrap;
@@ -116,11 +116,11 @@
     }
 
     @media (max-width: 700px) {
-      .edu-item {
+      .item {
         flex-direction: column;
       }
 
-      .edu-right {
+      .item-right {
         margin-top: 6px;
       }
     }
@@ -153,25 +153,52 @@
   <div>
     <h2>EDUCATION</h2>
 
-    <div class="edu-item">
-      <div class="edu-left">
+    <div class="item">
+      <div class="item-left">
         <h3>HONAM UNIVERSITY</h3>
         <p>컴퓨터 공학과 학사</p>
         <p>졸업</p>
       </div>
-      <div class="edu-right">
+      <div class="item-right">
         February 2019 – February 2025
       </div>
     </div>
 
-    <div class="edu-item">
-      <div class="edu-left">
+    <div class="item">
+      <div class="item-left">
         <h3>JEONNAM HIGH SCHOOL</h3>
         <p>인문계열 이과</p>
         <p>졸업</p>
       </div>
-      <div class="edu-right">
+      <div class="item-right">
         March 2016 – January 2019
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Certifications -->
+  <div>
+    <h2>CERTIFICATIONS</h2>
+
+    <div class="item">
+      <div class="item-left">
+        <h3>AWS CLF-C02</h3>
+        <p>Amazon Web Services</p>
+      </div>
+      <div class="item-right">
+        November 2023
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-left">
+        <h3>정보처리기사 (필기)</h3>
+        <p>한국산업인력공단</p>
+      </div>
+      <div class="item-right">
+        June 2025
       </div>
     </div>
   </div>
@@ -195,30 +222,6 @@
       <li>Grafana</li>
       <li>Git / GitHub</li>
     </ul>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- Projects -->
-  <div>
-    <h2>PROJECTS</h2>
-
-    <div class="project">
-      <h3>Docker-based Container Monitoring System</h3>
-      <p>
-        Docker 컨테이너 기반 서비스의 자원 사용량을 모니터링하고
-        실행 환경별 성능 특성을 비교한 프로젝트입니다.
-      </p>
-      <a href="#" target="_blank">GitHub Repository</a>
-    </div>
-
-    <div class="project">
-      <h3>Spring Boot Backend Service</h3>
-      <p>
-        전기 사용량 데이터를 처리하고 요금을 예측하는 백엔드 서비스를 구현했습니다.
-      </p>
-      <a href="#" target="_blank">GitHub Repository</a>
-    </div>
   </div>
 
 </div>
