@@ -6,19 +6,26 @@
   <title>IT Engineer Portfolio</title>
 
   <style>
+    /* ===== Base ===== */
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       line-height: 1.8;
       color: #1f2937;
-      background-color: #ffffff;
+      background-color: #f8fafc;
     }
 
     section {
       max-width: 880px;
-      margin: 0 auto;
-      padding: 96px 24px;
-      border-bottom: 1px solid #f1f5f9;
+      margin: 80px auto 0;
+      padding: 64px 32px;
+      background-color: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    section + section {
+      margin-top: 48px;
     }
 
     h1 {
@@ -45,11 +52,9 @@
     }
 
     ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 8px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
     }
 
     a {
@@ -62,9 +67,29 @@
       text-decoration: underline;
     }
 
-    /* 프로젝트 카드 느낌 */
+    /* ===== Intro ===== */
+    .intro p:first-of-type {
+      font-size: 18px;
+    }
+
+    /* ===== Skills ===== */
+    .skills-desc {
+      margin-bottom: 16px;
+    }
+
+    .skills-list li {
+      display: inline-block;
+      background-color: #f1f5f9;
+      padding: 8px 14px;
+      margin: 6px 6px 0 0;
+      border-radius: 999px;
+      font-size: 14px;
+      color: #334155;
+    }
+
+    /* ===== Projects ===== */
     .project {
-      padding: 24px 0;
+      padding: 32px 0;
     }
 
     .project + .project {
@@ -72,13 +97,49 @@
       margin-top: 32px;
       padding-top: 32px;
     }
+
+    .project a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #2563eb;
+      color: #ffffff;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .project a:hover {
+      background-color: #1d4ed8;
+      text-decoration: none;
+    }
+
+    /* ===== Contact ===== */
+    .contact a {
+      word-break: break-all;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      section {
+        padding: 48px 20px;
+        margin-top: 48px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
   <!-- Intro -->
-  <section>
+  <section class="intro">
     <h1>IT Engineer Portfolio</h1>
     <p>
       백엔드 개발과 시스템 운영 관점에서 서비스를 바라보는 IT엔지니어 지망생입니다.
@@ -92,16 +153,23 @@
   <!-- Skills -->
   <section>
     <h2>기술 스택</h2>
-    <p>
-      주로 백엔드 개발과 시스템 운영 관점에서 사용해온 기술입니다.
+    <p class="skills-desc">
+      백엔드 개발과 시스템 운영 관점에서 주로 사용해온 기술입니다.
     </p>
-    <ul>
-      <li><strong>Language</strong>: Java, JavaScript, Python</li>
-      <li><strong>Backend</strong>: Spring Boot, REST API</li>
-      <li><strong>Database</strong>: MySQL, Oracle</li>
-      <li><strong>Infra / DevOps</strong>: Linux, Docker</li>
-      <li><strong>Monitoring</strong>: Prometheus, Grafana, cAdvisor</li>
-      <li><strong>Tools</strong>: Git/GitHub, Notion, Teams, Slack</li>
+    <ul class="skills-list">
+      <li>Java</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>Spring Boot</li>
+      <li>REST API</li>
+      <li>MySQL</li>
+      <li>Oracle</li>
+      <li>Linux</li>
+      <li>Docker</li>
+      <li>Prometheus</li>
+      <li>Grafana</li>
+      <li>cAdvisor</li>
+      <li>Git / GitHub</li>
     </ul>
   </section>
 
@@ -119,9 +187,7 @@
         Prometheus, Grafana, cAdvisor를 활용해 CPU·메모리·네트워크 지표를 수집하고
         시각화했습니다.
       </p>
-      <p>
-        <a href="#">GitHub Repository</a>
-      </p>
+      <a href="#" target="_blank">GitHub Repository</a>
     </div>
 
     <div class="project">
@@ -133,17 +199,15 @@
       <p>
         REST API 기반으로 서버–클라이언트 간 데이터 흐름을 설계하고 구현했습니다.
       </p>
-      <p>
-        <a href="#">GitHub Repository</a>
-      </p>
+      <a href="#" target="_blank">GitHub Repository</a>
     </div>
   </section>
 
   <!-- Contact -->
-  <section>
+  <section class="contact">
     <h2>Contact</h2>
     <p>
-      GitHub:
+      GitHub :
       <a href="https://github.com/sk4diana" target="_blank">
         https://github.com/sk4diana
       </a>
