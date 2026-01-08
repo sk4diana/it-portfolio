@@ -1072,7 +1072,7 @@
       </div>
 
       <!-- ✅ Evidence / Screenshots -->
-      <div class="p1-mini-title">증빙 캡쳐 (설계 · 기능 · 화면)</div>
+      <div class="p1-mini-title">설계 · 기능 · 화면</div>
       <div class="p1-evidence-grid">
 
         <!-- 1) Architecture -->
@@ -1157,79 +1157,233 @@
     <div class="divider"></div>
 
     <!-- PROJECT II -->
-    <section id="project2">
-      <h2>PROJECT II</h2>
+    <!-- PROJECT II (REPLACE WHOLE SECTION) -->
+<section id="project2">
+  <h2>PROJECT II</h2>
 
-      <div class="item" style="margin-bottom: 0;">
-        <div class="row-top">
-          <h3>Docker Container Monitoring System</h3>
-          <p class="date">November 2024 – February 2025</p>
-        </div>
+  <!-- ✅ Project 2: Project 1과 동일 톤으로 스타일(섹션 내부/붙여넣기 안전) -->
+  <style>
+    .p2-table-wrap { margin-top: 18px; }
+    .p2-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .p2-table th, .p2-table td {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 12px 14px;
+      vertical-align: top;
+      font-size: 14px;
+      color: #374151;
+    }
+    .p2-table th {
+      width: 180px;
+      background: rgba(124, 58, 237, 0.08);
+      color: #111827;
+      font-weight: 900;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .p2-table tr:last-child th,
+    .p2-table tr:last-child td { border-bottom: none; }
 
-        <div class="row-body">
-          <div class="teamproject-title">cAdvisor · Prometheus · Grafana 기반 컨테이너 모니터링</div>
+    .p2-kpi {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      background: rgba(124, 58, 237, 0.05);
+      color: #374151;
+      max-width: 820px;
+    }
+    .p2-kpi strong { color: #111827; }
 
-          <a class="chip" href="assets/docs/graduation-presentation.pdf" target="_blank" rel="noreferrer">발표자료</a>
-          <a class="chip" href="assets/docs/graduation-thesis.pdf" target="_blank" rel="noreferrer">논문(PDF)</a>
+    .p2-mini-title{
+      margin-top: 26px;
+      font-weight: 900;
+      font-size: 16px;
+      color: #111827;
+      letter-spacing: 0.2px;
+    }
 
-          <p>
-            Docker 환경에서 실행되는 컨테이너의 <strong>CPU · Memory · Network</strong> 사용량을
-            실시간으로 수집·저장·시각화하는 모니터링 시스템을 구현했습니다. <br/>
-            <strong>cAdvisor → Prometheus → Grafana</strong> 파이프라인을 Docker Compose로 구성해,
-            실행 환경을 일관되게 유지하고 대시보드에서 변화 추이를 한눈에 확인할 수 있도록 했습니다.
-          </p>
+    .p2-evidence-grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 14px;
+      max-width: 980px;
+    }
+    .p2-evidence-item{
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .p2-evidence-item img{
+      width: 100%;
+      display: block;
+    }
+    .p2-evidence-item figcaption{
+      padding: 10px 12px;
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+    @media (min-width: 900px){
+      .p2-evidence-grid { grid-template-columns: 1fr 1fr; }
+    }
 
-          <div class="subsection-title">개발/아키텍처</div>
-          <ul class="detail-list">
-            <li><strong>cAdvisor</strong>: 컨테이너 리소스 메트릭 수집(컨테이너 단위 CPU/메모리/네트워크)</li>
-            <li><strong>Prometheus</strong>: cAdvisor 엔드포인트를 주기적으로 스크래핑하여 시계열 데이터 저장</li>
-            <li><strong>Grafana</strong>: Prometheus 데이터를 기반으로 대시보드 구성 및 실시간 시각화</li>
-            <li><strong>Docker Compose</strong>: 모니터링 스택을 하나의 구성으로 묶어 배포/실행 자동화</li>
-          </ul>
+    .p2-badge{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 900;
+      font-size: 12px;
+      color: #7c3aed;
+      background: rgba(124, 58, 237, 0.10);
+      border: 1px solid rgba(124, 58, 237, 0.18);
+      padding: 6px 10px;
+      border-radius: 999px;
+      margin-top: 10px;
+    }
+  </style>
 
-          <p style="margin-top: 18px;">
-            시스템은 <strong>컨테이너(리소스) → cAdvisor 수집 → Prometheus 저장 → Grafana 시각화</strong> 흐름으로 구성했습니다.
-            특히 다수의 컨테이너를 동시에 실행하는 상황에서도, 각 컨테이너별 리소스 지표가 대시보드에서
-            분리되어 확인되도록 구성해 운영 관점에서 “병목 지점”을 빠르게 파악할 수 있게 했습니다.
-          </p>
+  <div class="item" style="margin-bottom: 0;">
+    <div class="row-top">
+      <h3>Docker Container Monitoring System</h3>
+      <p class="date">November 2024 – February 2025</p>
+    </div>
 
-          <div class="subsection-title">담당 역할</div>
-          <ul class="detail-list">
-            <li><strong>모니터링 스택 설계</strong>: cAdvisor/Prometheus/Grafana 역할 정의 및 데이터 흐름(수집→저장→시각화) 설계</li>
-            <li><strong>구성/배포</strong>: Docker Compose 기반 서비스 구성 및 실행 환경 표준화</li>
-            <li><strong>Prometheus 설정</strong>: cAdvisor 스크래핑 타깃/주기 등 수집 설정 구성</li>
-            <li><strong>Grafana 대시보드</strong>: CPU/Memory/Network 지표를 중심으로 실시간 모니터링 화면 구성</li>
-            <li><strong>테스트 시나리오 구성</strong>: 단일/다중 컨테이너 구동 및 부하 상황에서 지표 변화 확인</li>
-          </ul>
+    <div class="row-body">
+      <div class="teamproject-title">cAdvisor · Prometheus · Grafana 기반 컨테이너 모니터링</div>
 
-          <div class="subsection-title">개발 영역</div>
-          <ul class="detail-list">
-            <li><strong>[컨테이너 지표 수집]</strong> cAdvisor 기반 컨테이너별 CPU/메모리/네트워크 메트릭 수집</li>
-            <li><strong>[시계열 저장]</strong> Prometheus 스크래핑으로 메트릭 누적 및 조회 기반 마련</li>
-            <li><strong>[시각화]</strong> Grafana에서 컨테이너 단위 대시보드 구성(리소스 변화 추이 확인)</li>
-            <li><strong>[부하 검증]</strong> CPU 과부하 / 메모리 사용량 증가 / 네트워크 트래픽 유발 컨테이너(task0~task2)로 동작 검증</li>
-            <li><strong>[확장 관점]</strong> 운영 중 임계치 초과 알림 등 확장 방향(알림/자동 경고) 적용 가능 구조로 정리</li>
-          </ul>
+      <a class="chip" href="assets/docs/graduation-presentation.pdf" target="_blank" rel="noreferrer">발표자료</a>
+      <a class="chip" href="assets/docs/graduation-thesis.pdf" target="_blank" rel="noreferrer">논문(PDF)</a>
 
-          <div class="subsection-title">개발환경</div>
-          <ul class="detail-list">
-            <li>Ubuntu 24.04 LTS</li>
-            <li>Docker Engine / Docker Compose</li>
-            <li>cAdvisor</li>
-            <li>Prometheus</li>
-            <li>Grafana</li>
-            <li>Chrome</li>
-          </ul>
+      <p style="margin-top: 12px;">
+        Docker 환경에서 실행되는 컨테이너의 <strong>CPU · Memory · Network</strong> 사용량을
+        실시간으로 <strong>수집(cAdvisor) → 저장(Prometheus) → 시각화(Grafana)</strong> 하는 모니터링 시스템입니다.<br/>
+        Docker Compose로 실행 환경을 표준화하여, 운영 관점에서 컨테이너별 리소스 변화를 빠르게 파악할 수 있도록 구성했습니다.
+      </p>
 
-          <div class="subsection-title">도구 및 참고</div>
-          <ul class="detail-list">
-            <li>Git / GitHub</li>
-            <li>Docker Hub 이미지 활용(cAdvisor / Prometheus / Grafana)</li>
-            <li>Dashboard 기반 운영 지표 설계(컨테이너 단위 모니터링 관점)</li>
-          </ul>
-        </div>
+      <!-- ✅ KPI / Highlights -->
+      <div class="p2-kpi">
+        <div style="font-weight: 900; margin-bottom: 6px; color:#111827;">핵심 성과</div>
+        <ul style="margin: 0; padding-left: 18px;">
+          <li>Docker Compose로 <strong>모니터링 스택을 일괄 배포</strong> (cAdvisor/Prometheus/Grafana)</li>
+          <li>컨테이너별 CPU/Memory/Network 지표를 <strong>대시보드로 실시간 확인</strong></li>
+          <li>부하 컨테이너(task0~task2)로 <strong>지표 변화 검증</strong> (CPU/메모리/트래픽 유발)</li>
+        </ul>
       </div>
-    </section>
+
+      <!-- ✅ Summary Table -->
+      <div class="p2-mini-title">프로젝트 요약</div>
+      <div class="p2-table-wrap">
+        <table class="p2-table">
+          <tr>
+            <th>한줄 소개</th>
+            <td>Docker 컨테이너 리소스(CPU/Memory/Network)를 수집·저장·시각화하는 모니터링 시스템</td>
+          </tr>
+          <tr>
+            <th>구조</th>
+            <td><strong>cAdvisor(수집) → Prometheus(저장) → Grafana(시각화)</strong> / Docker Compose로 구성</td>
+          </tr>
+          <tr>
+            <th>담당 역할</th>
+            <td>
+              <ul style="margin:0; padding-left:18px;">
+                <li>모니터링 스택 설계(역할 정의/데이터 흐름 설계)</li>
+                <li>Docker Compose 기반 배포/실행 구성 표준화</li>
+                <li>Prometheus 스크래핑 타깃/주기 설정 구성</li>
+                <li>Grafana 대시보드 구성(CPU/Memory/Network 중심)</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th>기술 스택</th>
+            <td>Ubuntu 24.04 LTS, Docker Engine/Compose, cAdvisor, Prometheus, Grafana</td>
+          </tr>
+          <tr>
+            <th>설계 · 기능 · 화면</th>
+            <td>시스템 구조도, Grafana 대시보드 캡쳐, VM vs Docker 비교 자료</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ✅ Role & Work -->
+      <div class="p2-mini-title">역할 · 업무 · 성과</div>
+      <div class="p2-table-wrap">
+        <table class="p2-table">
+          <tr>
+            <th>수집</th>
+            <td>cAdvisor로 컨테이너 단위 CPU/Memory/Network 메트릭 수집</td>
+          </tr>
+          <tr>
+            <th>저장</th>
+            <td>Prometheus가 cAdvisor 엔드포인트를 주기적으로 스크래핑하여 시계열 데이터 누적</td>
+          </tr>
+          <tr>
+            <th>시각화</th>
+            <td>
+              Grafana에서 컨테이너별 지표를 대시보드로 구성하여 운영 관점(병목/이상징후)을 빠르게 확인
+              <div class="p2-badge">✔ Grafana 대시보드 동작 증빙</div>
+            </td>
+          </tr>
+          <tr>
+            <th>검증</th>
+            <td>부하 컨테이너(task0~task2)로 CPU/메모리/트래픽 변화가 대시보드에 반영되는지 검증</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ✅ Evidence -->
+      <div class="p2-mini-title">증빙 캡쳐 (구조 · 동작)</div>
+      <div class="p2-evidence-grid">
+        <figure class="p2-evidence-item">
+          <img src="assets/img/p2-grafana.png" alt="Grafana Monitoring Dashboard" />
+          <figcaption>
+            <strong>[동작 증빙]</strong> Grafana 대시보드에서 컨테이너 수/CPU/Memory/Network 지표를 실시간 확인
+          </figcaption>
+        </figure>
+
+        <figure class="p2-evidence-item">
+          <img src="assets/img/p2-architecture.png" alt="Docker Compose Architecture" />
+          <figcaption>
+            <strong>[시스템 구조]</strong> 컨테이너 메트릭(cAdvisor) → 저장(Prometheus) → 시각화(Grafana) 파이프라인
+          </figcaption>
+        </figure>
+
+        <figure class="p2-evidence-item">
+          <img src="assets/img/p2-vm-vs-docker.png" alt="VM vs Docker" />
+          <figcaption>
+            <strong>[개념 근거]</strong> VM vs Docker 비교를 통해 컨테이너 단위 모니터링 필요성과 설계 기준을 정리
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- (Optional) 기존 detail-list 유지하고 싶으면 아래 유지 -->
+      <div class="subsection-title">개발환경</div>
+      <ul class="detail-list">
+        <li>Ubuntu 24.04 LTS</li>
+        <li>Docker Engine / Docker Compose</li>
+        <li>cAdvisor / Prometheus / Grafana</li>
+        <li>Chrome</li>
+      </ul>
+
+      <div class="subsection-title">확장 방향</div>
+      <ul class="detail-list">
+        <li>임계치 기반 Alerting(예: CPU 80% 이상 지속) 구성으로 운영 알림 체계 확장 가능</li>
+        <li>노드/서비스 단위 대시보드 확장(서비스별 SLO 관점)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
   </div>
 
