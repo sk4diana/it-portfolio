@@ -438,37 +438,25 @@
       .about-avatar{ width:64px; height:64px; }
     }
 
-/* 카드(네모 박스) 안 컨텐츠 묶음을 가운데로 */
-.evi-center{
-  max-width: 820px;     /* ← 이 값이 “가운데에 모여 보이는 폭” 결정 */
-  margin: 0 auto;       /* ← 묶음 자체를 가운데로 */
-  padding: 14px 16px;   /* 카드 안 여백(원하면 줄여도 됨) */
-}
-
-/* 이미지 아래 여백 줄이기 */
-.evi-center img{
-  width: 100%;
-  display: block;
-  margin: 0 auto;
-}
-
-/* 글은 좌측 정렬 유지 + 위 여백 줄이기 */
-.evi-text{
-  text-align: left;
-  margin: 10px 0 0;     /* ← 여기(10px)가 “그림-글 간격” */
-  color: #6b7280;
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-    .chip-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-      margin-top: 10px;
+    /* 카드(네모 박스) 안에서 이미지+설명 가운데 정렬 */
+    .center-card {
+      text-align: center;
     }
-    
+
+    .center-card img {
+      display: block;
+      margin: 0 auto;     /* 이미지 가운데 */
+      max-width: 100%;
+      height: auto;
+    }
+
+    .center-card .caption {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.5;
+      text-align: center; /* 설명도 가운데 */
+    }
   </style>
 </head>
 
@@ -979,14 +967,6 @@
       <!-- Docs (keep) -->
       <a class="chip" href="assets/docs/lg-regen-final.pdf" target="_blank" rel="noreferrer">산출문서</a>
 
-      <a class="chip" href="https://github.com/sk4diana/dx_project_lg_regen" target="_blank" rel="noreferrer">
-        GitHub (Front-end)
-      </a>
-      <a class="chip" href="https://github.com/sk4diana/dx_project_back" target="_blank" rel="noreferrer">
-        GitHub (Back-end)
-      </a>
-    </div>
-      
       <p style="margin-top: 12px;">
         동남아(인도네시아·말레이시아) 무슬림 가정의 생활 패턴을 반영해
         가전 제어 경험을 재구성한 <strong>스마트홈 솔루션</strong>입니다.<br/>
@@ -1391,12 +1371,12 @@
           </figcaption>
         </figure>
 
-        <div class="p2-evidence-item">
-          <div class="evi-center">
-            <img src="assets/img/p2-arch.png" alt="Docker Compose 구조" />
-            <p class="evi-text">[시스템 구조] 컨테이너 메트릭(cAdvisor) → 저장(Prometheus) → 시각화(Grafana) 파이프라인</p>
-          </div>
-        </div>
+        <figure class="p2-evidence-item center-card">
+          <img src="assets/img/p2-architecture.png" alt="Docker Compose Architecture" />
+          <figcaption>
+            <strong>[시스템 구조]</strong> 컨테이너 메트릭(cAdvisor) → 저장(Prometheus) → 시각화(Grafana) 파이프라인
+          </figcaption>
+        </figure>
 
         <figure class="p2-evidence-item">
           <img src="assets/img/p2-vm-vs-docker.png" alt="VM vs Docker" />
