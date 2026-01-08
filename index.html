@@ -1261,22 +1261,45 @@
       margin-top: 14px;
       max-width: 980px;
     }
-    .p2-evidence-item{
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      overflow: hidden;
-      background: #fff;
-    }
-    .p2-evidence-item img{
-      width: 100%;
-      display: block;
-    }
-    .p2-evidence-item figcaption{
-      padding: 10px 12px;
-      font-size: 13px;
-      color: #6b7280;
-      line-height: 1.5;
-    }
+    /* ✅ 카드 안에서 "이미지+설명" 덩어리를 가운데로 모으고, 캡션은 좌측 정렬 */
+.p2-evidence-item{
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fff;
+
+  /* 핵심: 그리드 row 높이로 늘어난 카드 안에서 콘텐츠를 세로 가운데로 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* 안쪽 여백으로 덩어리 느낌 만들기 */
+  padding: 14px;
+
+  /* 기존 overflow:hidden 때문에 패딩에서 이미지가 잘릴 수 있어 제거 추천 */
+  overflow: visible;
+}
+
+.p2-evidence-item img{
+  width: 100%;
+  max-width: 520px;   /* ✅ 이미지/설명 덩어리 폭(원하면 480~640 조절) */
+  height: auto;
+  display: block;
+  margin: 0 auto;     /* ✅ 이미지 자체를 카드 가운데로 */
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.p2-evidence-item figcaption{
+  width: 100%;
+  max-width: 520px;   /* ✅ 이미지랑 같은 폭으로 맞추기 */
+  margin: 10px auto 0;
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+
+  /* ✅ 문장은 가운데 정렬 X, 왼쪽 정렬 */
+  text-align: left;
+}
     @media (min-width: 900px){
       .p2-evidence-grid { grid-template-columns: 1fr 1fr; }
     }
@@ -1394,7 +1417,7 @@
           </figcaption>
         </figure>
 
-        <figure class="p2-evidence-item center-card">
+        <figure class="p2-evidence-item">
           <img src="assets/img/p2-architecture.png" alt="Docker Compose Architecture" />
           <figcaption>
             <strong>[시스템 구조]</strong> 컨테이너 메트릭(cAdvisor) → 저장(Prometheus) → 시각화(Grafana) 파이프라인
