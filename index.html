@@ -437,6 +437,26 @@
       .about-hero{ gap:12px; }
       .about-avatar{ width:64px; height:64px; }
     }
+
+    /* 카드(네모 박스) 안에서 이미지+설명 가운데 정렬 */
+    .center-card {
+      text-align: center;
+    }
+
+    .center-card img {
+      display: block;
+      margin: 0 auto;     /* 이미지 가운데 */
+      max-width: 100%;
+      height: auto;
+    }
+
+    .center-card .caption {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.5;
+      text-align: center; /* 설명도 가운데 */
+    }
   </style>
 </head>
 
@@ -1076,7 +1096,7 @@
       <div class="p1-evidence-grid">
 
         <!-- 1) Architecture -->
-        <figure class="p1-evidence-item">
+        <figure class="p1-evidence-item center-card">
           <img src="assets/img/p1-architecture.png" alt="LG Regen 시스템 구조도" />
           <figcaption>
             <strong>[시스템 구조]</strong> Flutter ↔ Spring Boot ↔ MySQL 기반 흐름 + NCP 배포/ESP32-LCD 연동 고려
@@ -1351,7 +1371,7 @@
           </figcaption>
         </figure>
 
-        <figure class="p2-evidence-item">
+        <figure class="p2-evidence-item center-card">
           <img src="assets/img/p2-architecture.png" alt="Docker Compose Architecture" />
           <figcaption>
             <strong>[시스템 구조]</strong> 컨테이너 메트릭(cAdvisor) → 저장(Prometheus) → 시각화(Grafana) 파이프라인
