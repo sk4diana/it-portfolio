@@ -1009,31 +1009,50 @@
       topNav.setAttribute('data-open', 'false');
     });
 
-    // Scroll Spy (현재 섹션 active)
-    const sections = Array.from(document.querySelectorAll('section[id]'));
-    const links = Array.from(document.querySelectorAll('.nav-links a'));
+    // Scroll Spy (상단 위치 기준으로 정확히 active)
+const sections = Array.from(document.querySelectorAll('section[id]'));
+const links = Array.from(document.querySelectorAll('.nav-links a'));
 
-    const setActive = (id) => {
-      links.forEach(a => {
-        a.classList.toggle('active', a.getAttribute('data-target') === id);
-      });
-    };
+const setActive = (id) => {
+  links.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('data-target') === id);
+  });
+};
 
-    const observer = new IntersectionObserver((entries) => {
-      const visible = entries
-        .filter(e => e.isIntersecting)
-        .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+// sticky nav 높이(여기만 상황에 맞게 92~110 사이로 조절 가능)
+const NAV_OFFSET = 110;
 
-      if (visible?.target?.id) setActive(visible.target.id);
-    }, {
-      root: null,
-      threshold: [0.25, 0.5, 0.7],
-    });
+const updateActiveByScroll = () => {
+  const scrollPos = window.scrollY + NAV_OFFSET;
 
-    sections.forEach(sec => observer.observe(sec));
+  let currentId = sections[0]?.id || '';
 
-    // 초기 active 세팅
-    if (sections[0]?.id) setActive(sections[0].id);
+  for (const sec of sections) {
+    if (sec.offsetTop <= scrollPos) currentId = sec.id;
+    else break;
+  }
+
+  if (currentId) setActive(currentId);
+};
+
+window.addEventListener('scroll', () => {
+  window.requestAnimationFrame(updateActiveByScroll);
+}, { passive: true });
+
+window.addEventListener('load', updateActiveByScroll);
+window.addEventListener('resize', updateActiveByScroll);
+
+// 메뉴 클릭 직후에도 즉시 반영(딜레이/튐 방지)
+navLinks?.addEventListener('click', (e) => {
+  const a = e.target.closest('a');
+  if (!a) return;
+
+  topNav.setAttribute('data-open', 'false');
+
+  // 스크롤 애니메이션 시작 후 약간 딜레이 주고 active 업데이트
+  setTimeout(updateActiveByScroll, 50);
+});
+
   </script>
 
 </body>
