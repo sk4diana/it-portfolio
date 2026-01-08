@@ -10,7 +10,7 @@
 ![Email](https://img.shields.io/badge/Email-sk4diana@gmail.com-7c3aed?style=for-the-badge)
 ![Location](https://img.shields.io/badge/Location-Gwangju,%20KR-6b7280?style=for-the-badge)
 
-- Portfolio Link : https://sk4diana.github.io/it-portfolio/
+### Portfolio Link : https://sk4diana.github.io/it-portfolio/
 </div>
 
 ---
