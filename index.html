@@ -100,7 +100,7 @@
     }
 
     .row-body p {
-      margin: 4px 0;
+      margin: 6px 0;
       color: #374151;
     }
 
@@ -235,6 +235,27 @@
 
     .project a:hover {
       text-decoration: underline;
+    }
+
+    /* TEAMPROJECT chip (스크린샷의 '동영상' 버튼 느낌) */
+    .chip {
+      display: inline-block;
+      background: #7c3aed;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 7px 12px;
+      border-radius: 6px;
+      margin: 12px 0 10px;
+      text-decoration: none;
+    }
+
+    .teamproject-title {
+      color: #7c3aed;
+      font-weight: 900;
+      font-size: 20px;
+      margin: 10px 0 18px 0;
+      letter-spacing: -0.2px;
     }
 
     @media (max-width: 700px) {
@@ -586,7 +607,59 @@
 
   <div class="divider"></div>
 
-  <!-- Projects -->
+  <!-- TEAMPROJECT (스크린샷 양식) -->
+  <div>
+    <h2>TEAMPROJECT I</h2>
+
+    <div class="item" style="margin-bottom: 0;">
+      <div class="row-top">
+        <h3>LG Regen</h3>
+        <p class="date">June 2025 – December 2025</p>
+      </div>
+
+      <div class="row-body">
+        <div class="teamproject-title">동남아 이슬람 국가 맞춤 ThinQ 활용 솔루션</div>
+
+        <!-- 동영상 링크가 있으면 href만 교체 -->
+        <a class="chip" href="#" target="_blank" rel="noreferrer">동영상</a>
+
+        <p>
+          동남아(인도네시아·말레이시아) 무슬림 가정의 종교/문화적 생활 패턴을 반영하여
+          기존 ThinQ 앱의 사용성을 재해석한 맞춤형 스마트홈 솔루션입니다.
+          앱 리뷰(VOC)와 사용자 행동 흐름을 기반으로 Pain Point를 정의하고,
+          문화 요소(라마단·기도·할랄·정결)가 가전 사용 경험에 직접 영향을 주는 지점을 기능으로 설계했습니다.
+        </p>
+
+        <p>
+          또한 동남아 주요 서비스(Grab, Tokopedia, Shopee) UI 분석을 통해
+          현지 사용자가 익숙한 카드 기반 UI 패턴을 참고하여
+          “필요한 기능을 빠르게 찾는 구조” 중심으로 정보 탐색 흐름을 정리했습니다.
+        </p>
+
+        <p style="margin-top: 18px;">
+          프로젝트에서 <strong>백엔드 & 하드웨어 설계</strong> 역할로 참여하여,
+          전력 관리(선불/후불) 기능의 유스케이스 정의와 데이터 모델 설계를 중심으로
+          서비스 흐름이 실제로 동작 가능한 구조가 되도록 구체화했습니다.
+        </p>
+
+        <div class="subsection-title">개발 영역</div>
+        <ul class="detail-list">
+          <li><strong>[전력 관리]</strong> 선불(토큰 추가/잔액·예상 사용기간 표시) · 후불(당월 예상 요금/당일·당월 사용량/청구 내역 조회) 흐름 설계</li>
+          <li><strong>[도메인/데이터 설계]</strong> 사용자·계량기·토큰 충전 이력·청구서·사용량 로그 등 핵심 엔티티 정의 및 필드 수준 명세</li>
+          <li><strong>[가전 제어 흐름]</strong> 앱–가전 간 네트워크 연결 전제 하에 상태 조회 → 모드/옵션 선택 → 명령 전송 → 상태 표시 흐름 정리</li>
+          <li><strong>[상태 확인/AS 플로우]</strong> 소모품 수명(게이지) 초기화 및 간편 AS 신청 플로우 요구사항 정리</li>
+        </ul>
+
+        <p style="margin-top: 18px;">
+          <strong>Keywords</strong>: VOC 기반 개선, Use Case 명세, 도메인 모델링, REST 관점 설계, 전력(Prepaid/Postpaid) 데이터 흐름
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Projects (기존 섹션 유지) -->
   <div>
     <h2>PROJECTS</h2>
 
