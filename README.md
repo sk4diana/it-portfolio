@@ -62,7 +62,7 @@
 
 ---
 
-## 🚀 TEAMPROJECT I — LG Regen
+## 🚀 PROJECT I — LG Regen
 ### **동남아 이슬람 국가 맞춤 ThinQ 활용 솔루션**
 - **Period**: Nov 2025 – Dec 2025  
 - **Keywords**: Flutter · Spring Boot · MySQL · REST API · ESP32/LCD · NCP(기준)
@@ -94,7 +94,7 @@ ESP32 + LCD 연동까지 고려해 **앱 ↔ 서버 ↔ 디바이스** 전체 �
 
 ---
 
-## 📊 TEAMPROJECT II — Docker Container Monitoring System
+## 📊 PROJECT II — Docker Container Monitoring System
 ### **cAdvisor · Prometheus · Grafana 기반 컨테이너 모니터링**
 - **Period**: Nov 2024 – Feb 2025  
 - **Keywords**: Docker Compose · cAdvisor · Prometheus · Grafana · Monitoring
